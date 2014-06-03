@@ -1,0 +1,5 @@
+enter_id_cms:
+    resource: "@EnterIdCmsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
