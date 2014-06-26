@@ -56,7 +56,6 @@ class Widget
      */
     private $template;
 
-
     /**
      * Get id
      *
@@ -175,7 +174,7 @@ class Widget
     /**
      * Get template
      *
-     * @return string 
+     * @return string
      */
     public function getTemplate()
     {
