@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new EnterId\CmsBundle\EnterIdCmsBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\AopBundle\JMSAopBundle(),
+            new EnterId\BootstrapBundle\EnterIdBootstrapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
