@@ -1,0 +1,7 @@
+{#src/EnterId/CmsBundle/Resources/views/Page/index.html.twig#}
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    Index({{ "now"|date('Y-m-d H:i:s')}}): <br/>
+    {{ render_esi(controller('EnterIdCmsBundle:Page:news')) }}
+{% endblock %}

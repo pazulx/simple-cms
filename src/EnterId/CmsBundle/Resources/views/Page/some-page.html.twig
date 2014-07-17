@@ -3,6 +3,6 @@
 {% block title %}{{ page.title }}{% endblock %}
 
 {% block content %}
-    Some page conten: <br/>
+    Some page conten({{ "now"|date('Y-m-d H:i:s')}}): <br/>
     {{ renderWidget('hello') }}
 {% endblock %}
