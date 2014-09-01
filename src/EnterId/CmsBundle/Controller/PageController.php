@@ -73,49 +73,50 @@ class PageController extends Controller
      */
     public function contactAction(Request $request)
     {
-        $form = $this->createForm(new EnquiryType());
+        //$form = $this->createForm(new EnquiryType());
 
-        if ($request->getMethod() == 'POST') {
-            $form->bind($request);
+        //if ($request->getMethod() == 'POST') {
+            //$form->bind($request);
 
-            if ($form->isValid()) {
+            //if ($form->isValid()) {
 
-                $data = $form->getData();
+                //$data = $form->getData();
 
-                $message = \Swift_Message::newInstance()
-                    ->setSubject($this->get('translator')->trans('Zapytanie do fileshark.pl'))
-                    ->setFrom(
-                        $this->container
-                            ->getParameter('enter_id_site.emails.contact_email')
-                    )
-                    ->setTo(
-                        $this->container
-                            ->getParameter('enter_id_site.emails.contact_email')
-                    )
-                    ->setReplyTo($data['email'])
-                    ->setBody(
-                        $this->renderView(
-                            'EnterIdSiteBundle:Page:contactEmail.txt.twig',
-                            array('enquiry' => $data)
-                        )
-                    );
+                //$message = \Swift_Message::newInstance()
+                    //->setSubject($this->get('translator')->trans('Zapytanie do fileshark.pl'))
+                    //->setFrom(
+                        //$this->container
+                            //->getParameter('enter_id_site.emails.contact_email')
+                    //)
+                    //->setTo(
+                        //$this->container
+                            //->getParameter('enter_id_site.emails.contact_email')
+                    //)
+                    //->setReplyTo($data['email'])
+                    //->setBody(
+                        //$this->renderView(
+                            //'EnterIdSiteBundle:Page:contactEmail.txt.twig',
+                            //array('enquiry' => $data)
+                        //)
+                    //);
 
-                $this->get('mailer')->send($message);
+                //$this->get('mailer')->send($message);
 
-                $this->get('session')->getFlashBag()->add(
-                    'notice-success',
-                    'enterid.site.page.messages.contact.success'
-                );
+                //$this->get('session')->getFlashBag()->add(
+                    //'notice-success',
+                    //'enterid.site.page.messages.contact.success'
+                //);
 
 
-                // Redirect - This is important to prevent users re-posting
-                // the form if they refresh the page
-                return $this->redirect(
-                    $this->generateUrl($request->get('_route'))
-                );
-            }
-        }
+                //// Redirect - This is important to prevent users re-posting
+                //// the form if they refresh the page
+                //return $this->redirect(
+                    //$this->generateUrl($request->get('_route'))
+                //);
+            //}
+        //}
 
-        return array( 'form' => $form->createView() );
+        //return array( 'form' => $form->createView() );
+        return array();
     }
 }
